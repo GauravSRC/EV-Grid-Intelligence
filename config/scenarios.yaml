@@ -1,0 +1,11 @@
+# Stress scenarios (applied to the simulated period; see evgrid/analysis/experiments.py)
+heatwave:            {label: "Heatwave (+4C, demand +12%, 3x cap-price hours, solar -5%)", temp_add: 4.0, demand_add: 0.12, cap_hours_mult: 3, solar_mult: 0.95}
+weak_monsoon_solar:  {label: "Weak-monsoon solar (-35%)", solar_mult: 0.65}
+wind_lull:           {label: "Wind lull (-60%)", wind_mult: 0.40}
+price_shock:         {label: "Price shock (+40% DAM/RTM, capped)", price_mult: 1.40}
+demand_growth:       {label: "Demand growth +20% (next FY)", demand_mult: 1.20}
+forecast_degradation: {label: "Forecast errors x2", fc_error_mult: 2.0}
+battery_ageing:      {label: "Battery ageing (SoH -10 pp)", bess_mult: 0.90, pack_mult: 0.90}
+grid_derate:         {label: "Grid derate -20% in Mumbai", grid_derate_cluster: MUM, grid_derate_frac: 0.20}
+mop_tod:             {label: "MoP ToD 0.7/1.3", tod_mult: {solar: 0.7, normal: 1.0, peak: 1.3}}
+combined:            {label: "Combined stress (heatwave + price shock + forecast x2 + ageing)", temp_add: 4.0, demand_add: 0.12, cap_hours_mult: 3, solar_mult: 0.95, price_mult: 1.4, fc_error_mult: 2.0, bess_mult: 0.9, pack_mult: 0.9}

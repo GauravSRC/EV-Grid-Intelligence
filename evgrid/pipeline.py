@@ -114,3 +114,19 @@ def stage_simulate(mode: str = "quick") -> None:
     out["targets"] = {"R": 0.897, "loss_pct": 0.08, "ebitda_margin": 0.12}
     out["redeployment"] = {"cost_cr": rcost, "log": plan_log}
     save_json(out, RESULTS_DIR / f"kpis_main_{mode}.json")
+
+
+def stage_analysis(mode: str = "quick") -> None:
+    from evgrid.analysis.experiments import economics, run_all_experiments, scalability
+    from evgrid.analysis.figures import make_all_figures
+    from evgrid.config import load_json
+
+    out = run_all_experiments(mode)
+    sc = scalability(load_config())
+    save_json(sc, RESULTS_DIR / "scalability.json")
+    main_p = RESULTS_DIR / "kpis_main_full.json"
+    main = load_json(main_p if main_p.exists() else RESULTS_DIR / "kpis_main_quick.json")
+    gaps = load_json(RESULTS_DIR / "gap_levers.json")
+    eco = economics(main, gaps, out["scenarios"], load_config())
+    save_json(eco, RESULTS_DIR / "economics.json")
+    make_all_figures()

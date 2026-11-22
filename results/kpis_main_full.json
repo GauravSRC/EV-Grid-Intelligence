@@ -1,0 +1,1408 @@
+{
+  "mode": "full",
+  "period": "FY2025-26 full year",
+  "Baseline": {
+    "overall": {
+      "R": 0.7790868910953238,
+      "R_dc": 0.76654006403573,
+      "R_swap": 0.8304350672791548,
+      "R_literal": 0.781782476366027,
+      "dc_lost_session_pct": 0.2348855142838055,
+      "swap_stockout_pct": 0.17138658903872106,
+      "induced_minus_suppressed_mwh": 2088.22041602619,
+      "loss_pct": 0.10093214390090852,
+      "loss_charger_pct": 0.02359427624725511,
+      "loss_charger_standby_pct": 0.02644704001168566,
+      "loss_bess_pct": 0.010185694375839357,
+      "loss_pack_chg_pct": 0.020921124331030015,
+      "loss_pack_idle_pct": 0.0045709827786292465,
+      "loss_dist_pct": 0.015213026156469113,
+      "delivered_gwh": 1069.2832421734458,
+      "dc_delivered_gwh": 845.4732051333924,
+      "swap_delivered_gwh": 223.8100370400536,
+      "reference_gwh": 1372.4826516720532,
+      "meter_input_gwh": 1189.240988258154,
+      "re_total_gwh": 426.9946027424164,
+      "re_spill_gwh": 20.673988813725458,
+      "re_sold_banked_gwh": 0.0,
+      "re_utilisation_pct": 0.9515825523766702,
+      "re_monetised_pct": 0.9515825523766702,
+      "effective_re_share": 0.34166381577868143,
+      "avg_procurement_inr_kwh": 5.61989112071172,
+      "peak_grid_import_mw": 311.90084838566827,
+      "revenue_cr": 2436.122679025139,
+      "energy_cost_cr": 668.340487029843,
+      "opex_var_cr": 383.42018286401907,
+      "opex_fixed_cr": 1090.0,
+      "degradation_cr": 110.41166732528005,
+      "ebitda_cr": 294.36200913127686,
+      "ebitda_margin": 0.12083217797925984,
+      "ebitda_after_deg_cr": 183.9503418059968,
+      "ebitda_after_deg_margin": 0.07550947388232847,
+      "bess_efc": 286.6905222412883,
+      "bess_efc_per_year": 286.6905222412883,
+      "pack_turns_per_day": 2.043927278904599,
+      "bess_soh_change_pp_yr": -3.9396633484105283,
+      "pack_soh_change_pp_yr": -6.846422655325654,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 5.684341886080802e-14
+    },
+    "DEL": {
+      "R": 0.7295453154905226,
+      "R_dc": 0.7208795317057088,
+      "R_swap": 0.7599991532279866,
+      "R_literal": 0.7317440052307899,
+      "dc_lost_session_pct": 0.2804503563264117,
+      "swap_stockout_pct": 0.2416755734223094,
+      "induced_minus_suppressed_mwh": 581.8992705423734,
+      "loss_pct": 0.09922330629233213,
+      "loss_charger_pct": 0.024347689082288248,
+      "loss_charger_standby_pct": 0.023052994827974554,
+      "loss_bess_pct": 0.009972394469998869,
+      "loss_pack_chg_pct": 0.023107444785529004,
+      "loss_pack_idle_pct": 0.0039877033738632385,
+      "loss_dist_pct": 0.014755079752678221,
+      "delivered_gwh": 288.3649526251863,
+      "dc_delivered_gwh": 221.81978617214335,
+      "swap_delivered_gwh": 66.54516645304297,
+      "reference_gwh": 395.2666770689894,
+      "meter_input_gwh": 320.10695595372914,
+      "re_total_gwh": 85.06650256579393,
+      "re_spill_gwh": 0.1421039628725855,
+      "re_sold_banked_gwh": 0.0,
+      "re_utilisation_pct": 0.9983294956465067,
+      "re_monetised_pct": 0.9983294956465067,
+      "effective_re_share": 0.2653000724395286,
+      "avg_procurement_inr_kwh": 4.5929326568828746,
+      "peak_grid_import_mw": 78.96592754350189,
+      "revenue_cr": 670.9242530967397,
+      "energy_cost_cr": 147.02296916952506,
+      "opex_var_cr": 107.83667582213187,
+      "opex_fixed_cr": 283.40000000000003,
+      "degradation_cr": 28.814880991009705,
+      "ebitda_cr": 132.66460810508278,
+      "ebitda_margin": 0.19773410708101805,
+      "ebitda_after_deg_cr": 103.84972711407308,
+      "ebitda_after_deg_margin": 0.1547860680765987,
+      "bess_efc": 291.6251686697238,
+      "bess_efc_per_year": 291.6251686697238,
+      "pack_turns_per_day": 2.5321600629011787,
+      "bess_soh_change_pp_yr": -3.7709384331849902,
+      "pack_soh_change_pp_yr": -7.448911672029471,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 5.684341886080802e-14
+    },
+    "MUM": {
+      "R": 0.6617807797645874,
+      "R_dc": 0.6576829264910731,
+      "R_swap": 0.6969755301009397,
+      "R_literal": 0.6639830413404474,
+      "dc_lost_session_pct": 0.3435244617243139,
+      "swap_stockout_pct": 0.30692891388587673,
+      "induced_minus_suppressed_mwh": 729.2475799541571,
+      "loss_pct": 0.09438725133039276,
+      "loss_charger_pct": 0.02933831792245808,
+      "loss_charger_standby_pct": 0.028113491084559593,
+      "loss_bess_pct": 0.009426208172919207,
+      "loss_pack_chg_pct": 0.011058585369604256,
+      "loss_pack_idle_pct": 0.0023265787284881333,
+      "loss_dist_pct": 0.014124070052363482,
+      "delivered_gwh": 284.4620935219761,
+      "dc_delivered_gwh": 253.21760783349373,
+      "swap_delivered_gwh": 31.244485688482335,
+      "reference_gwh": 429.84338956348455,
+      "meter_input_gwh": 314.08692621776976,
+      "re_total_gwh": 99.62384753127358,
+      "re_spill_gwh": 0.5961971681087433,
+      "re_sold_banked_gwh": 0.0,
+      "re_utilisation_pct": 0.9940155175404003,
+      "re_monetised_pct": 0.9940155175404003,
+      "effective_re_share": 0.31528740006995637,
+      "avg_procurement_inr_kwh": 6.347487851448927,
+      "peak_grid_import_mw": 76.0763755607344,
+      "revenue_cr": 584.1179715635706,
+      "energy_cost_cr": 199.36629484662288,
+      "opex_var_cr": 81.544154511649,
+      "opex_fixed_cr": 261.59999999999997,
+      "degradation_cr": 19.009835362003873,
+      "ebitda_cr": 41.60752220529872,
+      "ebitda_margin": 0.07123136802985783,
+      "ebitda_after_deg_cr": 22.59768684329485,
+      "ebitda_after_deg_margin": 0.03868685427158699,
+      "bess_efc": 291.598716862804,
+      "bess_efc_per_year": 291.598716862804,
+      "pack_turns_per_day": 2.038126920318482,
+      "bess_soh_change_pp_yr": -4.00295702860973,
+      "pack_soh_change_pp_yr": -6.92297028963279,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 3.552713678800501e-14
+    },
+    "BLR": {
+      "R": 0.8926332360499971,
+      "R_dc": 0.8717339276891943,
+      "R_swap": 0.9573664998606989,
+      "R_literal": 0.8961976193742952,
+      "dc_lost_session_pct": 0.12991032496343874,
+      "swap_stockout_pct": 0.0438772949878351,
+      "induced_minus_suppressed_mwh": 419.74789434633567,
+      "loss_pct": 0.08958554024689235,
+      "loss_charger_pct": 0.02036100136224395,
+      "loss_charger_standby_pct": 0.019031744319165548,
+      "loss_bess_pct": 0.008544635896063427,
+      "loss_pack_chg_pct": 0.026487608113897776,
+      "loss_pack_idle_pct": 0.0018532923579565564,
+      "loss_dist_pct": 0.013307258197565069,
+      "delivered_gwh": 261.50206028814216,
+      "dc_delivered_gwh": 193.05209805086864,
+      "swap_delivered_gwh": 68.44996223727357,
+      "reference_gwh": 292.9557736896717,
+      "meter_input_gwh": 287.21697330156604,
+      "re_total_gwh": 96.99672698104087,
+      "re_spill_gwh": 2.290630439070996,
+      "re_sold_banked_gwh": 0.0,
+      "re_utilisation_pct": 0.9763844563588343,
+      "re_monetised_pct": 0.9763844563588343,
+      "effective_re_share": 0.32973711634560104,
+      "avg_procurement_inr_kwh": 5.449378931077917,
+      "peak_grid_import_mw": 75.22420498273118,
+      "revenue_cr": 627.1410900343344,
+      "energy_cost_cr": 156.51541229575224,
+      "opex_var_cr": 103.7389736349021,
+      "opex_fixed_cr": 218.0,
+      "degradation_cr": 24.110035696304966,
+      "ebitda_cr": 148.88670410368007,
+      "ebitda_margin": 0.2374054363038609,
+      "ebitda_after_deg_cr": 124.77666840737511,
+      "ebitda_after_deg_margin": 0.19896107971580032,
+      "bess_efc": 291.625572773509,
+      "bess_efc_per_year": 291.625572773509,
+      "pack_turns_per_day": 3.4728545021447776,
+      "bess_soh_change_pp_yr": -3.4636370122967066,
+      "pack_soh_change_pp_yr": -8.617380111810515,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 3.552713678800501e-14
+    },
+    "HYD": {
+      "R": 0.9410837875842535,
+      "R_dc": 0.9462679809945412,
+      "R_swap": 0.9261970458624516,
+      "R_literal": 0.9450026529735042,
+      "dc_lost_session_pct": 0.05551799251762864,
+      "swap_stockout_pct": 0.07465258969795918,
+      "induced_minus_suppressed_mwh": 178.74050362218986,
+      "loss_pct": 0.12131392587515731,
+      "loss_charger_pct": 0.01965453238259649,
+      "loss_charger_standby_pct": 0.03587036965869147,
+      "loss_bess_pct": 0.012986215003306567,
+      "loss_pack_chg_pct": 0.02484131090799248,
+      "loss_pack_idle_pct": 0.009156523447956469,
+      "loss_dist_pct": 0.018804974474613847,
+      "delivered_gwh": 119.74829429031428,
+      "dc_delivered_gwh": 89.30735674355863,
+      "swap_delivered_gwh": 30.440937546755645,
+      "reference_gwh": 127.2450932320343,
+      "meter_input_gwh": 136.27068933245877,
+      "re_total_gwh": 71.62175915216568,
+      "re_spill_gwh": 8.179121022598459,
+      "re_sold_banked_gwh": 0.0,
+      "re_utilisation_pct": 0.8858011710488525,
+      "re_monetised_pct": 0.8858011710488525,
+      "effective_re_share": 0.4655633463098335,
+      "avg_procurement_inr_kwh": 5.955848750314863,
+      "peak_grid_import_mw": 42.43314895332718,
+      "revenue_cr": 284.9009613167637,
+      "energy_cost_cr": 81.16076147652696,
+      "opex_var_cr": 46.83461538709898,
+      "opex_fixed_cr": 163.5,
+      "degradation_cr": 18.750411515542467,
+      "ebitda_cr": -6.594415546862223,
+      "ebitda_margin": -0.023146343614931862,
+      "ebitda_after_deg_cr": -25.34482706240469,
+      "ebitda_after_deg_margin": -0.08896013177795266,
+      "bess_efc": 278.57113941176857,
+      "bess_efc_per_year": 278.57113941176857,
+      "pack_turns_per_day": 1.2636337711397114,
+      "bess_soh_change_pp_yr": -4.0076077536747245,
+      "pack_soh_change_pp_yr": -5.656866995803547,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 3.197442310920451e-14
+    },
+    "CHE": {
+      "R": 0.9059077218807792,
+      "R_dc": 0.9328609833369773,
+      "R_swap": 0.8282190987688184,
+      "R_literal": 0.9089535456572592,
+      "dc_lost_session_pct": 0.06889334034930511,
+      "swap_stockout_pct": 0.17358615721562498,
+      "induced_minus_suppressed_mwh": 178.58516756126483,
+      "loss_pct": 0.12437533880477099,
+      "loss_charger_pct": 0.019187309865676228,
+      "loss_charger_standby_pct": 0.03715491546420247,
+      "loss_bess_pct": 0.013199802928707887,
+      "loss_pack_chg_pct": 0.022934229612685233,
+      "loss_pack_idle_pct": 0.012531960459656146,
+      "loss_dist_pct": 0.019367120473843036,
+      "delivered_gwh": 115.20584144782713,
+      "dc_delivered_gwh": 88.07635633332804,
+      "swap_delivered_gwh": 27.129485114499097,
+      "reference_gwh": 127.17171811787324,
+      "meter_input_gwh": 131.5594434526302,
+      "re_total_gwh": 73.68576651214235,
+      "re_spill_gwh": 9.465936221074674,
+      "re_sold_banked_gwh": 0.0,
+      "re_utilisation_pct": 0.8715364354727201,
+      "re_monetised_pct": 0.8715364354727201,
+      "effective_re_share": 0.48814306754186687,
+      "avg_procurement_inr_kwh": 6.40585328044203,
+      "peak_grid_import_mw": 43.33487857979379,
+      "revenue_cr": 269.03840301373066,
+      "energy_cost_cr": 84.27504924141589,
+      "opex_var_cr": 43.46576350823713,
+      "opex_fixed_cr": 163.5,
+      "degradation_cr": 19.726503760419035,
+      "ebitda_cr": -22.202409735922373,
+      "ebitda_margin": -0.08252505771374673,
+      "ebitda_after_deg_cr": -41.92891349634141,
+      "ebitda_after_deg_margin": -0.15584731780541206,
+      "bess_efc": 271.8233391574674,
+      "bess_efc_per_year": 271.8233391574674,
+      "pack_turns_per_day": 1.1261720678496927,
+      "bess_soh_change_pp_yr": -4.425814266515932,
+      "pack_soh_change_pp_yr": -5.932021937966439,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 3.552713678800501e-14
+    },
+    "monthly": {
+      "2025-04": {
+        "BLR": {
+          "R": 0.89652302937652,
+          "loss_pct": 0.09328973698507532,
+          "ebitda_margin": 0.21695961906125308
+        },
+        "CHE": {
+          "R": 0.9085505081031126,
+          "loss_pct": 0.13332867376596688,
+          "ebitda_margin": -0.12462210117800582
+        },
+        "DEL": {
+          "R": 0.7416878836827073,
+          "loss_pct": 0.10315637618171485,
+          "ebitda_margin": 0.17687311652825027
+        },
+        "HYD": {
+          "R": 0.9423551666621396,
+          "loss_pct": 0.13370530576195494,
+          "ebitda_margin": -0.046563956856277705
+        },
+        "MUM": {
+          "R": 0.6738490934652062,
+          "loss_pct": 0.09675622973791688,
+          "ebitda_margin": 0.024086683643570923
+        }
+      },
+      "2025-05": {
+        "BLR": {
+          "R": 0.8969766837682068,
+          "loss_pct": 0.09295027857445871,
+          "ebitda_margin": 0.221244501858335
+        },
+        "CHE": {
+          "R": 0.9075757480514857,
+          "loss_pct": 0.13642786848948898,
+          "ebitda_margin": -0.09930643489146082
+        },
+        "DEL": {
+          "R": 0.7364718463150912,
+          "loss_pct": 0.10361778558856831,
+          "ebitda_margin": 0.18138107575816423
+        },
+        "HYD": {
+          "R": 0.9428731141851949,
+          "loss_pct": 0.131546741741208,
+          "ebitda_margin": -0.04335074816854661
+        },
+        "MUM": {
+          "R": 0.6760489121567667,
+          "loss_pct": 0.09812880729736653,
+          "ebitda_margin": 0.027997940689730605
+        }
+      },
+      "2025-06": {
+        "BLR": {
+          "R": 0.9004158944915058,
+          "loss_pct": 0.09278320220211168,
+          "ebitda_margin": 0.21463859701075197
+        },
+        "CHE": {
+          "R": 0.9092625973139471,
+          "loss_pct": 0.13373211066110474,
+          "ebitda_margin": -0.1231629785629869
+        },
+        "DEL": {
+          "R": 0.7423445752999986,
+          "loss_pct": 0.10504026093704291,
+          "ebitda_margin": 0.17513383872619515
+        },
+        "HYD": {
+          "R": 0.9442227661289665,
+          "loss_pct": 0.12927298093799974,
+          "ebitda_margin": -0.059230076943280856
+        },
+        "MUM": {
+          "R": 0.675926082357964,
+          "loss_pct": 0.09812961775412672,
+          "ebitda_margin": 0.018476521275497843
+        }
+      },
+      "2025-07": {
+        "BLR": {
+          "R": 0.9000652240451821,
+          "loss_pct": 0.09211452106839264,
+          "ebitda_margin": 0.21051038762551552
+        },
+        "CHE": {
+          "R": 0.9100553915379158,
+          "loss_pct": 0.1292747298473125,
+          "ebitda_margin": -0.1321840198515116
+        },
+        "DEL": {
+          "R": 0.7445032415976879,
+          "loss_pct": 0.10306317242694896,
+          "ebitda_margin": 0.16822511594584152
+        },
+        "HYD": {
+          "R": 0.9454915220116618,
+          "loss_pct": 0.12529733180709687,
+          "ebitda_margin": -0.07709165018575845
+        },
+        "MUM": {
+          "R": 0.6803302089257648,
+          "loss_pct": 0.09678604187514074,
+          "ebitda_margin": 0.054855472479357376
+        }
+      },
+      "2025-08": {
+        "BLR": {
+          "R": 0.90111675368528,
+          "loss_pct": 0.09076484228222925,
+          "ebitda_margin": 0.21186746821691832
+        },
+        "CHE": {
+          "R": 0.9083643420982901,
+          "loss_pct": 0.13076953876885417,
+          "ebitda_margin": -0.12815494060920077
+        },
+        "DEL": {
+          "R": 0.7399212805633393,
+          "loss_pct": 0.10265741219669619,
+          "ebitda_margin": 0.17329235133808352
+        },
+        "HYD": {
+          "R": 0.9470562183507079,
+          "loss_pct": 0.1225962180116632,
+          "ebitda_margin": -0.07534115215885344
+        },
+        "MUM": {
+          "R": 0.6725391570587115,
+          "loss_pct": 0.09480242511034911,
+          "ebitda_margin": 0.065087607732887
+        }
+      },
+      "2025-09": {
+        "BLR": {
+          "R": 0.8943254845556069,
+          "loss_pct": 0.08987701246179383,
+          "ebitda_margin": 0.22727943676329834
+        },
+        "CHE": {
+          "R": 0.9072631135931694,
+          "loss_pct": 0.12479739058806391,
+          "ebitda_margin": -0.10422309719185814
+        },
+        "DEL": {
+          "R": 0.735712517637033,
+          "loss_pct": 0.10130318085710247,
+          "ebitda_margin": 0.18695638457089256
+        },
+        "HYD": {
+          "R": 0.9414039873159454,
+          "loss_pct": 0.11973275689581903,
+          "ebitda_margin": -0.053685458679164307
+        },
+        "MUM": {
+          "R": 0.664012987295266,
+          "loss_pct": 0.09442861029043266,
+          "ebitda_margin": 0.073566445110286
+        }
+      },
+      "2025-10": {
+        "BLR": {
+          "R": 0.8833392400939568,
+          "loss_pct": 0.08685225235499902,
+          "ebitda_margin": 0.26070052716550646
+        },
+        "CHE": {
+          "R": 0.9015801561351776,
+          "loss_pct": 0.11820673968068102,
+          "ebitda_margin": -0.04408634400676929
+        },
+        "DEL": {
+          "R": 0.7168048640048065,
+          "loss_pct": 0.09672691342776538,
+          "ebitda_margin": 0.2211529237488808
+        },
+        "HYD": {
+          "R": 0.9364728833348795,
+          "loss_pct": 0.11569356119305285,
+          "ebitda_margin": 0.02149642392823637
+        },
+        "MUM": {
+          "R": 0.6464899242314623,
+          "loss_pct": 0.0930718468053505,
+          "ebitda_margin": 0.07578348619250026
+        }
+      },
+      "2025-11": {
+        "BLR": {
+          "R": 0.8914232483115279,
+          "loss_pct": 0.08770804326882581,
+          "ebitda_margin": 0.2524410717190441
+        },
+        "CHE": {
+          "R": 0.904531978471078,
+          "loss_pct": 0.11758755631346562,
+          "ebitda_margin": -0.046474497733720234
+        },
+        "DEL": {
+          "R": 0.7237927238836451,
+          "loss_pct": 0.09567336545578219,
+          "ebitda_margin": 0.21426383534825996
+        },
+        "HYD": {
+          "R": 0.9406824589489774,
+          "loss_pct": 0.1164230481414264,
+          "ebitda_margin": 0.0011431302998547895
+        },
+        "MUM": {
+          "R": 0.6541386083458489,
+          "loss_pct": 0.0928000420845013,
+          "ebitda_margin": 0.09821737602481248
+        }
+      },
+      "2025-12": {
+        "BLR": {
+          "R": 0.8881980349774674,
+          "loss_pct": 0.08763555098996058,
+          "ebitda_margin": 0.24510947915466189
+        },
+        "CHE": {
+          "R": 0.9046750706084196,
+          "loss_pct": 0.1176885272898111,
+          "ebitda_margin": -0.05915011822310851
+        },
+        "DEL": {
+          "R": 0.7247577790008632,
+          "loss_pct": 0.09541230064829444,
+          "ebitda_margin": 0.20967107904287724
+        },
+        "HYD": {
+          "R": 0.9404693093034107,
+          "loss_pct": 0.1142378019146059,
+          "ebitda_margin": -0.0037345274758928955
+        },
+        "MUM": {
+          "R": 0.6546184716753124,
+          "loss_pct": 0.09276392092280832,
+          "ebitda_margin": 0.09339632420529156
+        }
+      },
+      "2026-01": {
+        "BLR": {
+          "R": 0.8911133646840084,
+          "loss_pct": 0.0873252492265373,
+          "ebitda_margin": 0.25145312790003793
+        },
+        "CHE": {
+          "R": 0.9054510551232595,
+          "loss_pct": 0.11827541461759225,
+          "ebitda_margin": -0.07584472396173199
+        },
+        "DEL": {
+          "R": 0.7222844413331476,
+          "loss_pct": 0.09509536031813268,
+          "ebitda_margin": 0.2155594038116525
+        },
+        "HYD": {
+          "R": 0.9396503372184962,
+          "loss_pct": 0.1145202999935505,
+          "ebitda_margin": 4.8566511739293236e-05
+        },
+        "MUM": {
+          "R": 0.6543605396379981,
+          "loss_pct": 0.09201684946198942,
+          "ebitda_margin": 0.09504763242015231
+        }
+      },
+      "2026-02": {
+        "BLR": {
+          "R": 0.8867843484944011,
+          "loss_pct": 0.08748408483332415,
+          "ebitda_margin": 0.25357916089568466
+        },
+        "CHE": {
+          "R": 0.9029657979572118,
+          "loss_pct": 0.1184492265570573,
+          "ebitda_margin": -0.04251398791652064
+        },
+        "DEL": {
+          "R": 0.7188068487691226,
+          "loss_pct": 0.09485605637017429,
+          "ebitda_margin": 0.21484319650635103
+        },
+        "HYD": {
+          "R": 0.9387349927652809,
+          "loss_pct": 0.11653642315523924,
+          "ebitda_margin": 0.006559993426639381
+        },
+        "MUM": {
+          "R": 0.6491097468643224,
+          "loss_pct": 0.09184201353577195,
+          "ebitda_margin": 0.10116055280421749
+        }
+      },
+      "2026-03": {
+        "BLR": {
+          "R": 0.885434539932209,
+          "loss_pct": 0.08767213558899102,
+          "ebitda_margin": 0.26957871742319217
+        },
+        "CHE": {
+          "R": 0.9022592478844641,
+          "loss_pct": 0.11681673673742608,
+          "ebitda_margin": -0.030712129322732686
+        },
+        "DEL": {
+          "R": 0.7141764937409528,
+          "loss_pct": 0.09549066307284064,
+          "ebitda_margin": 0.22527933496622263
+        },
+        "HYD": {
+          "R": 0.9356934254145874,
+          "loss_pct": 0.11872274896981473,
+          "ebitda_margin": 0.028929955427847612
+        },
+        "MUM": {
+          "R": 0.6480602173913174,
+          "loss_pct": 0.09204351135166775,
+          "ebitda_margin": 0.11389364862167774
+        }
+      }
+    }
+  },
+  "AI": {
+    "overall": {
+      "R": 0.8886273078530433,
+      "R_dc": 0.8614333283458461,
+      "R_swap": 0.9999192898212942,
+      "R_literal": 0.8844373705275923,
+      "dc_lost_session_pct": 0.1370420621985067,
+      "swap_stockout_pct": 8.597410135124939e-05,
+      "induced_minus_suppressed_mwh": -1930.8093933971832,
+      "loss_pct": 0.07135160355400125,
+      "loss_charger_pct": 0.023390625578599823,
+      "loss_charger_standby_pct": 0.0057619606652600155,
+      "loss_bess_pct": 0.009268288647070543,
+      "loss_pack_chg_pct": 0.015513429164236103,
+      "loss_pack_idle_pct": 0.003219538631304383,
+      "loss_dist_pct": 0.014197760867530383,
+      "delivered_gwh": 1219.625731055405,
+      "dc_delivered_gwh": 950.1379396802671,
+      "swap_delivered_gwh": 269.487791375138,
+      "reference_gwh": 1372.4826516720532,
+      "meter_input_gwh": 1313.0918900189467,
+      "re_total_gwh": 426.9946027424164,
+      "re_spill_gwh": 0.0,
+      "re_sold_banked_gwh": 14.920739521132065,
+      "re_utilisation_pct": 0.9650563744241681,
+      "re_monetised_pct": 0.9999999999999999,
+      "effective_re_share": 0.31381951739519043,
+      "avg_procurement_inr_kwh": 5.434119205340296,
+      "peak_grid_import_mw": 246.5872477208574,
+      "revenue_cr": 2820.5405727410657,
+      "energy_cost_cr": 713.5497857928545,
+      "opex_var_cr": 467.1640122857545,
+      "opex_fixed_cr": 1090.0,
+      "degradation_cr": 107.51443184529428,
+      "ebitda_cr": 549.8267746624567,
+      "ebitda_margin": 0.19493666567899165,
+      "ebitda_after_deg_cr": 442.31234281716246,
+      "ebitda_after_deg_margin": 0.15681828763317993,
+      "bess_efc": 288.9480286805765,
+      "bess_efc_per_year": 288.9480286805765,
+      "pack_turns_per_day": 2.461075720320895,
+      "bess_soh_change_pp_yr": -3.3520995291784845,
+      "pack_soh_change_pp_yr": -6.963894877348113,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 7.105427357601002e-14
+    },
+    "DEL": {
+      "R": 0.8720421449925967,
+      "R_dc": 0.8356622232245433,
+      "R_swap": 0.9998907345647811,
+      "R_literal": 0.8649526354769362,
+      "dc_lost_session_pct": 0.16273300344344224,
+      "swap_stockout_pct": 0.00011658001823688924,
+      "induced_minus_suppressed_mwh": -582.818899578604,
+      "loss_pct": 0.06690435908200396,
+      "loss_charger_pct": 0.023544955658333002,
+      "loss_charger_standby_pct": 0.005097737217914179,
+      "loss_bess_pct": 0.0033409673927769523,
+      "loss_pack_chg_pct": 0.01796776420830901,
+      "loss_pack_idle_pct": 0.003549979741285078,
+      "loss_dist_pct": 0.013402954863385726,
+      "delivered_gwh": 344.68925459565577,
+      "dc_delivered_gwh": 257.1392410451737,
+      "swap_delivered_gwh": 87.55001355048206,
+      "reference_gwh": 395.2666770689894,
+      "meter_input_gwh": 369.31923885331014,
+      "re_total_gwh": 85.06650256579393,
+      "re_spill_gwh": 0.0,
+      "re_sold_banked_gwh": 0.002909828512797979,
+      "re_utilisation_pct": 0.9999657934859782,
+      "re_monetised_pct": 1.0,
+      "effective_re_share": 0.2303253764991851,
+      "avg_procurement_inr_kwh": 4.541749477321219,
+      "peak_grid_import_mw": 88.39069024102893,
+      "revenue_cr": 824.0841893041967,
+      "energy_cost_cr": 167.73554600266917,
+      "opex_var_cr": 140.02147217596865,
+      "opex_fixed_cr": 283.40000000000003,
+      "degradation_cr": 29.133530176522513,
+      "ebitda_cr": 232.9271711255588,
+      "ebitda_margin": 0.28264972699236884,
+      "ebitda_after_deg_cr": 203.79364094903627,
+      "ebitda_after_deg_margin": 0.24729711307907318,
+      "bess_efc": 106.53655464025138,
+      "bess_efc_per_year": 106.53655464025138,
+      "pack_turns_per_day": 3.331431261433868,
+      "bess_soh_change_pp_yr": -1.9742693930564734,
+      "pack_soh_change_pp_yr": -8.170219023285567,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 7.105427357601002e-14
+    },
+    "MUM": {
+      "R": 0.822209111147958,
+      "R_dc": 0.8015273438426708,
+      "R_swap": 0.9998361729875563,
+      "R_literal": 0.8227429243499338,
+      "dc_lost_session_pct": 0.19710713778682415,
+      "swap_stockout_pct": 0.00017448070523162773,
+      "induced_minus_suppressed_mwh": -644.6697990219909,
+      "loss_pct": 0.06928884968222783,
+      "loss_charger_pct": 0.02789406289665871,
+      "loss_charger_standby_pct": 0.006287526985853561,
+      "loss_bess_pct": 0.011873540163806625,
+      "loss_pack_chg_pct": 0.00895592195028475,
+      "loss_pack_idle_pct": 0.0018262766680372487,
+      "loss_dist_pct": 0.012451521017586939,
+      "delivered_gwh": 353.4211767102761,
+      "dc_delivered_gwh": 308.59982591281414,
+      "swap_delivered_gwh": 44.82135079746199,
+      "reference_gwh": 429.84338956348455,
+      "meter_input_gwh": 379.7305135101853,
+      "re_total_gwh": 99.62384753127358,
+      "re_spill_gwh": 0.0,
+      "re_sold_banked_gwh": 0.23886214371788406,
+      "re_utilisation_pct": 0.9976023597799422,
+      "re_monetised_pct": 0.9999999999999999,
+      "effective_re_share": 0.2617250440815311,
+      "avg_procurement_inr_kwh": 6.185243442587183,
+      "peak_grid_import_mw": 87.41820475273708,
+      "revenue_cr": 741.6912737615844,
+      "energy_cost_cr": 234.87256686391373,
+      "opex_var_cr": 110.37330536184085,
+      "opex_fixed_cr": 261.59999999999997,
+      "degradation_cr": 22.189294098614692,
+      "ebitda_cr": 134.84540153582986,
+      "ebitda_margin": 0.18180799249793483,
+      "ebitda_after_deg_cr": 112.65610743721517,
+      "ebitda_after_deg_margin": 0.15189083574607123,
+      "bess_efc": 451.56641894514627,
+      "bess_efc_per_year": 451.56641894514627,
+      "pack_turns_per_day": 2.9237671753073697,
+      "bess_soh_change_pp_yr": -4.263968824579745,
+      "pack_soh_change_pp_yr": -7.884148568347597,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 4.263256414560601e-14
+    },
+    "BLR": {
+      "R": 0.9386830949556844,
+      "R_dc": 0.9188867672129857,
+      "R_swap": 1.0,
+      "R_literal": 0.9329484714162668,
+      "dc_lost_session_pct": 0.07989931117474167,
+      "swap_stockout_pct": 1.1102230246251565e-16,
+      "induced_minus_suppressed_mwh": -291.3558885819657,
+      "loss_pct": 0.067902649114736,
+      "loss_charger_pct": 0.020840168170257353,
+      "loss_charger_standby_pct": 0.00470070049649469,
+      "loss_bess_pct": 0.008778055573970963,
+      "loss_pack_chg_pct": 0.018253361798127612,
+      "loss_pack_idle_pct": 0.002290102482617817,
+      "loss_dist_pct": 0.013040260593267556,
+      "delivered_gwh": 274.9926797624495,
+      "dc_delivered_gwh": 203.494452432158,
+      "swap_delivered_gwh": 71.49822733029148,
+      "reference_gwh": 292.9557736896717,
+      "meter_input_gwh": 294.9593198138316,
+      "re_total_gwh": 96.99672698104087,
+      "re_spill_gwh": 0.0,
+      "re_sold_banked_gwh": 0.8352603650991761,
+      "re_utilisation_pct": 0.99138877783719,
+      "re_monetised_pct": 1.0000000000000002,
+      "effective_re_share": 0.3260160305381623,
+      "avg_procurement_inr_kwh": 5.31676558157465,
+      "peak_grid_import_mw": 79.84092311254896,
+      "revenue_cr": 660.1671726009232,
+      "energy_cost_cr": 156.82295595508495,
+      "opex_var_cr": 112.62917030436843,
+      "opex_fixed_cr": 218.0,
+      "degradation_cr": 24.82795479275584,
+      "ebitda_cr": 172.71504634146987,
+      "ebitda_margin": 0.2616231971380946,
+      "ebitda_after_deg_cr": 147.88709154871404,
+      "ebitda_after_deg_margin": 0.22401460976326532,
+      "bess_efc": 309.30419685551595,
+      "bess_efc_per_year": 309.30419685551595,
+      "pack_turns_per_day": 3.627510265362328,
+      "bess_soh_change_pp_yr": -2.9811201627701838,
+      "pack_soh_change_pp_yr": -8.380537738427524,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 4.263256414560601e-14
+    },
+    "HYD": {
+      "R": 0.9722281912397537,
+      "R_dc": 0.9626047147329718,
+      "R_swap": 0.9998626172505568,
+      "R_literal": 0.9660128996029549,
+      "dc_lost_session_pct": 0.03571747482141949,
+      "swap_stockout_pct": 0.00014620550795740872,
+      "induced_minus_suppressed_mwh": -163.9753531756578,
+      "loss_pct": 0.08340211956472984,
+      "loss_charger_pct": 0.02008213532115726,
+      "loss_charger_standby_pct": 0.0072239390085387335,
+      "loss_bess_pct": 0.013835453364363495,
+      "loss_pack_chg_pct": 0.01838106767013559,
+      "loss_pack_idle_pct": 0.004895930783936616,
+      "loss_dist_pct": 0.018983593416598162,
+      "delivered_gwh": 123.71128531004987,
+      "dc_delivered_gwh": 90.84919323946238,
+      "swap_delivered_gwh": 32.86209207058749,
+      "reference_gwh": 127.2450932320343,
+      "meter_input_gwh": 134.9212388675955,
+      "re_total_gwh": 71.62175915216568,
+      "re_spill_gwh": 0.0,
+      "re_sold_banked_gwh": 6.313670877642277,
+      "re_utilisation_pct": 0.9118470287189063,
+      "re_monetised_pct": 1.0000000000000002,
+      "effective_re_share": 0.48404601694039656,
+      "avg_procurement_inr_kwh": 5.543929434424167,
+      "peak_grid_import_mw": 33.31637089146908,
+      "revenue_cr": 298.03428203212,
+      "energy_cost_cr": 74.79938274870366,
+      "opex_var_cr": 52.17791551393198,
+      "opex_fixed_cr": 163.5,
+      "degradation_cr": 15.020280869489053,
+      "ebitda_cr": 7.55698376948439,
+      "ebitda_margin": 0.02535608896385266,
+      "ebitda_after_deg_cr": -7.463297100004663,
+      "ebitda_after_deg_margin": -0.02504174032972597,
+      "bess_efc": 295.37957496194633,
+      "bess_efc_per_year": 295.37957496194633,
+      "pack_turns_per_day": 1.3641383175835404,
+      "bess_soh_change_pp_yr": -3.600014580444852,
+      "pack_soh_change_pp_yr": -5.209343298927297,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 2.842170943040401e-14
+    },
+    "CHE": {
+      "R": 0.9657124579073718,
+      "R_dc": 0.9538201982740673,
+      "R_swap": 0.9999900639070317,
+      "R_literal": 0.9587635909156494,
+      "dc_lost_session_pct": 0.043663194619428164,
+      "swap_stockout_pct": 1.0351430834942832e-05,
+      "induced_minus_suppressed_mwh": -247.98945303876826,
+      "loss_pct": 0.0848962729785567,
+      "loss_charger_pct": 0.019153772892613198,
+      "loss_charger_standby_pct": 0.006965834223446788,
+      "loss_bess_pct": 0.014695860202146808,
+      "loss_pack_chg_pct": 0.01840977570722792,
+      "loss_pack_idle_pct": 0.006610902784790816,
+      "loss_dist_pct": 0.019060127168331182,
+      "delivered_gwh": 122.81133467697373,
+      "dc_delivered_gwh": 90.05522705065881,
+      "swap_delivered_gwh": 32.756107626314915,
+      "reference_gwh": 127.17171811787324,
+      "meter_input_gwh": 134.16157897402428,
+      "re_total_gwh": 73.68576651214235,
+      "re_spill_gwh": 0.0,
+      "re_sold_banked_gwh": 7.530036306159929,
+      "re_utilisation_pct": 0.8978088080970279,
+      "re_monetised_pct": 1.0,
+      "effective_re_share": 0.4931048867484719,
+      "avg_procurement_inr_kwh": 5.912224261898444,
+      "peak_grid_import_mw": 31.868292074299553,
+      "revenue_cr": 296.56365504224146,
+      "energy_cost_cr": 79.31933422248305,
+      "opex_var_cr": 51.96214892964457,
+      "opex_fixed_cr": 163.5,
+      "degradation_cr": 16.343371907912196,
+      "ebitda_cr": 1.7821718901138297,
+      "ebitda_margin": 0.006009407625691636,
+      "ebitda_after_deg_cr": -14.561200017798367,
+      "ebitda_after_deg_margin": -0.04909974560343317,
+      "bess_efc": 311.3653887458727,
+      "bess_efc_per_year": 311.3653887458727,
+      "pack_turns_per_day": 1.3597387972733463,
+      "bess_soh_change_pp_yr": -4.039164654194001,
+      "pack_soh_change_pp_yr": -5.663850795996725,
+      "compliance_price_band": 1.0,
+      "compliance_fleet_band": 1.0,
+      "compliance_daily_guardrail": 1.0,
+      "compliance_grid_limit": 1.0,
+      "compliance_bess_reserve": 1.0,
+      "compliance_charger_reserve": 1.0,
+      "compliance_pack_reserve": 1.0,
+      "max_energy_balance_error_mwh": 2.842170943040401e-14
+    },
+    "monthly": {
+      "2025-04": {
+        "BLR": {
+          "R": 0.9390652795491731,
+          "loss_pct": 0.07050238625597799,
+          "ebitda_margin": 0.22684624720492416
+        },
+        "CHE": {
+          "R": 0.9661800661916277,
+          "loss_pct": 0.08941514541768225,
+          "ebitda_margin": -0.03455041057358193
+        },
+        "DEL": {
+          "R": 0.8771645416486029,
+          "loss_pct": 0.07522709750207034,
+          "ebitda_margin": 0.25625690682931357
+        },
+        "HYD": {
+          "R": 0.972607058191878,
+          "loss_pct": 0.09083706788272765,
+          "ebitda_margin": -0.007581743756930806
+        },
+        "MUM": {
+          "R": 0.8264583722209948,
+          "loss_pct": 0.06983722810246172,
+          "ebitda_margin": 0.13320429171095471
+        }
+      },
+      "2025-05": {
+        "BLR": {
+          "R": 0.9396522670340064,
+          "loss_pct": 0.07083938152372658,
+          "ebitda_margin": 0.23685110394795447
+        },
+        "CHE": {
+          "R": 0.9656506446995075,
+          "loss_pct": 0.09131408885587967,
+          "ebitda_margin": -0.02173598813472824
+        },
+        "DEL": {
+          "R": 0.8736358231502327,
+          "loss_pct": 0.07076214949984648,
+          "ebitda_margin": 0.2660016660603576
+        },
+        "HYD": {
+          "R": 0.9736344805113235,
+          "loss_pct": 0.08950748771668067,
+          "ebitda_margin": -0.00336763488044105
+        },
+        "MUM": {
+          "R": 0.8281011526143758,
+          "loss_pct": 0.07012552757689884,
+          "ebitda_margin": 0.13172089095004513
+        }
+      },
+      "2025-06": {
+        "BLR": {
+          "R": 0.9419160988125329,
+          "loss_pct": 0.06884948166624191,
+          "ebitda_margin": 0.24005332780552588
+        },
+        "CHE": {
+          "R": 0.9672858430339881,
+          "loss_pct": 0.0906879505607268,
+          "ebitda_margin": -0.034320165097259
+        },
+        "DEL": {
+          "R": 0.8775603324983333,
+          "loss_pct": 0.06835153461342959,
+          "ebitda_margin": 0.2602272569501438
+        },
+        "HYD": {
+          "R": 0.9742020977428968,
+          "loss_pct": 0.08883696777746619,
+          "ebitda_margin": -0.0063339638347750015
+        },
+        "MUM": {
+          "R": 0.828672389164124,
+          "loss_pct": 0.0706965470941983,
+          "ebitda_margin": 0.12240911459551623
+        }
+      },
+      "2025-07": {
+        "BLR": {
+          "R": 0.9437320256443097,
+          "loss_pct": 0.06877880061090236,
+          "ebitda_margin": 0.23936231200130978
+        },
+        "CHE": {
+          "R": 0.9679842474294383,
+          "loss_pct": 0.08924701603296434,
+          "ebitda_margin": -0.03776022182791535
+        },
+        "DEL": {
+          "R": 0.8802978835649131,
+          "loss_pct": 0.06680715131636655,
+          "ebitda_margin": 0.25374777648175745
+        },
+        "HYD": {
+          "R": 0.9751462295887042,
+          "loss_pct": 0.08639835458196413,
+          "ebitda_margin": -0.018347116512412658
+        },
+        "MUM": {
+          "R": 0.8319920737053373,
+          "loss_pct": 0.0697982616539356,
+          "ebitda_margin": 0.16180438298226862
+        }
+      },
+      "2025-08": {
+        "BLR": {
+          "R": 0.9440015453408819,
+          "loss_pct": 0.06764593412081332,
+          "ebitda_margin": 0.24744369936951668
+        },
+        "CHE": {
+          "R": 0.9673463005759498,
+          "loss_pct": 0.0894662272731348,
+          "ebitda_margin": -0.029611944796804467
+        },
+        "DEL": {
+          "R": 0.8783148963331435,
+          "loss_pct": 0.06625758648114764,
+          "ebitda_margin": 0.2601682288004761
+        },
+        "HYD": {
+          "R": 0.9760669104573912,
+          "loss_pct": 0.08377389134916796,
+          "ebitda_margin": -0.006765653452883179
+        },
+        "MUM": {
+          "R": 0.8279524484794677,
+          "loss_pct": 0.06854634071952002,
+          "ebitda_margin": 0.17096620290766643
+        }
+      },
+      "2025-09": {
+        "BLR": {
+          "R": 0.9397140257118421,
+          "loss_pct": 0.06826490400340207,
+          "ebitda_margin": 0.25768790643948125
+        },
+        "CHE": {
+          "R": 0.9658546257837237,
+          "loss_pct": 0.086699972132524,
+          "ebitda_margin": -0.010574177550444843
+        },
+        "DEL": {
+          "R": 0.8758074289771902,
+          "loss_pct": 0.06639683247599683,
+          "ebitda_margin": 0.27336175611320257
+        },
+        "HYD": {
+          "R": 0.9722106209004857,
+          "loss_pct": 0.08314256876965725,
+          "ebitda_margin": 0.008585418353166493
+        },
+        "MUM": {
+          "R": 0.8238749493385185,
+          "loss_pct": 0.06918204813690543,
+          "ebitda_margin": 0.18065842743908142
+        }
+      },
+      "2025-10": {
+        "BLR": {
+          "R": 0.9351721629146561,
+          "loss_pct": 0.06670606122379429,
+          "ebitda_margin": 0.28619057575539486
+        },
+        "CHE": {
+          "R": 0.9645010203427663,
+          "loss_pct": 0.08054897198370248,
+          "ebitda_margin": 0.04498135657990288
+        },
+        "DEL": {
+          "R": 0.8663996119337635,
+          "loss_pct": 0.06329871858471435,
+          "ebitda_margin": 0.3065572900813572
+        },
+        "HYD": {
+          "R": 0.9699431659216644,
+          "loss_pct": 0.08004835781495143,
+          "ebitda_margin": 0.06304090808272333
+        },
+        "MUM": {
+          "R": 0.8165351076886974,
+          "loss_pct": 0.06920272806290581,
+          "ebitda_margin": 0.19077208257401537
+        }
+      },
+      "2025-11": {
+        "BLR": {
+          "R": 0.9380757250996994,
+          "loss_pct": 0.0668566187253491,
+          "ebitda_margin": 0.27583720970085973
+        },
+        "CHE": {
+          "R": 0.9647566857306166,
+          "loss_pct": 0.08095475565328104,
+          "ebitda_margin": 0.03619605850249574
+        },
+        "DEL": {
+          "R": 0.8692382431003558,
+          "loss_pct": 0.06389194769993523,
+          "ebitda_margin": 0.2996726630713572
+        },
+        "HYD": {
+          "R": 0.9721266012632002,
+          "loss_pct": 0.0804178590660759,
+          "ebitda_margin": 0.04397635258095484
+        },
+        "MUM": {
+          "R": 0.8180610771592315,
+          "loss_pct": 0.06920751452705023,
+          "ebitda_margin": 0.21566383583136034
+        }
+      },
+      "2025-12": {
+        "BLR": {
+          "R": 0.9364936040834028,
+          "loss_pct": 0.0667654123671611,
+          "ebitda_margin": 0.2761624227215119
+        },
+        "CHE": {
+          "R": 0.9650347172626501,
+          "loss_pct": 0.08065876205044935,
+          "ebitda_margin": 0.031199522669626237
+        },
+        "DEL": {
+          "R": 0.8700337126886817,
+          "loss_pct": 0.06299979308770226,
+          "ebitda_margin": 0.2983854421748932
+        },
+        "HYD": {
+          "R": 0.9719810704807911,
+          "loss_pct": 0.07928374029851859,
+          "ebitda_margin": 0.048098494378641034
+        },
+        "MUM": {
+          "R": 0.8192364574482888,
+          "loss_pct": 0.06914806168108774,
+          "ebitda_margin": 0.20553813357481165
+        }
+      },
+      "2026-01": {
+        "BLR": {
+          "R": 0.9382320160130403,
+          "loss_pct": 0.06657990736341197,
+          "ebitda_margin": 0.27318225004248853
+        },
+        "CHE": {
+          "R": 0.9656853931168099,
+          "loss_pct": 0.08077081655453518,
+          "ebitda_margin": 0.009020403443299347
+        },
+        "DEL": {
+          "R": 0.8679992811602778,
+          "loss_pct": 0.0624299550931518,
+          "ebitda_margin": 0.3008919513076002
+        },
+        "HYD": {
+          "R": 0.9712108667072998,
+          "loss_pct": 0.07926993224485625,
+          "ebitda_margin": 0.03898885757436736
+        },
+        "MUM": {
+          "R": 0.8184495094764277,
+          "loss_pct": 0.0683651312288153,
+          "ebitda_margin": 0.2045036509549154
+        }
+      },
+      "2026-02": {
+        "BLR": {
+          "R": 0.9356703709170998,
+          "loss_pct": 0.06654450445967482,
+          "ebitda_margin": 0.27717920622604736
+        },
+        "CHE": {
+          "R": 0.9654630461299182,
+          "loss_pct": 0.08100171252028006,
+          "ebitda_margin": 0.04316314950809119
+        },
+        "DEL": {
+          "R": 0.86697806642088,
+          "loss_pct": 0.06786916585408803,
+          "ebitda_margin": 0.30050323692120856
+        },
+        "HYD": {
+          "R": 0.9703961338371929,
+          "loss_pct": 0.08012515239954174,
+          "ebitda_margin": 0.05538143073458535
+        },
+        "MUM": {
+          "R": 0.8157890633105231,
+          "loss_pct": 0.06825779485903165,
+          "ebitda_margin": 0.2144198472232879
+        }
+      },
+      "2026-03": {
+        "BLR": {
+          "R": 0.9344019133676689,
+          "loss_pct": 0.06723676764614256,
+          "ebitda_margin": 0.2881648412383441
+        },
+        "CHE": {
+          "R": 0.9635387335198379,
+          "loss_pct": 0.0801680574005645,
+          "ebitda_margin": 0.05543909181143176
+        },
+        "DEL": {
+          "R": 0.8643480009756934,
+          "loss_pct": 0.0696132888871824,
+          "ebitda_margin": 0.3038570609178252
+        },
+        "HYD": {
+          "R": 0.9684914568704835,
+          "loss_pct": 0.0810628406590118,
+          "ebitda_margin": 0.0682099277356691
+        },
+        "MUM": {
+          "R": 0.8150680734015762,
+          "loss_pct": 0.06932617212728863,
+          "ebitda_margin": 0.2299058474522615
+        }
+      }
+    }
+  },
+  "targets": {
+    "R": 0.897,
+    "loss_pct": 0.08,
+    "ebitda_margin": 0.12
+  },
+  "redeployment": {
+    "cost_cr": {
+      "DEL": 0.11835165871846723,
+      "MUM": 0.027760865329192794,
+      "BLR": 0.04120951900194475,
+      "HYD": 0.0,
+      "CHE": 0.0
+    },
+    "log": [
+      {
+        "month": "2025-04",
+        "moved_mwh": 34.314713846153836,
+        "cost_inr": 1071068.332307692,
+        "Q_DEL": 87.04324769230769,
+        "Q_MUM": 44.54056153846154,
+        "Q_BLR": 70.73090461538462,
+        "Q_HYD": 48.41619076923078,
+        "Q_CHE": 49.26909538461538
+      },
+      {
+        "month": "2025-05",
+        "moved_mwh": 2.1351186600496135,
+        "cost_inr": 97197.16446650091,
+        "Q_DEL": 89.01309975186103,
+        "Q_MUM": 44.54056153846154,
+        "Q_BLR": 70.89617121588088,
+        "Q_HYD": 46.446338709677434,
+        "Q_CHE": 49.103828784119116
+      },
+      {
+        "month": "2025-06",
+        "moved_mwh": 0.0,
+        "cost_inr": 0.0,
+        "Q_DEL": 89.01309975186103,
+        "Q_MUM": 44.54056153846154,
+        "Q_BLR": 70.89617121588088,
+        "Q_HYD": 46.446338709677434,
+        "Q_CHE": 49.103828784119116
+      },
+      {
+        "month": "2025-07",
+        "moved_mwh": 0.0,
+        "cost_inr": 0.0,
+        "Q_DEL": 89.01309975186103,
+        "Q_MUM": 44.54056153846154,
+        "Q_BLR": 70.89617121588088,
+        "Q_HYD": 46.446338709677434,
+        "Q_CHE": 49.103828784119116
+      },
+      {
+        "month": "2025-08",
+        "moved_mwh": 0.0,
+        "cost_inr": 0.0,
+        "Q_DEL": 89.01309975186103,
+        "Q_MUM": 44.54056153846154,
+        "Q_BLR": 70.89617121588088,
+        "Q_HYD": 46.446338709677434,
+        "Q_CHE": 49.103828784119116
+      },
+      {
+        "month": "2025-09",
+        "moved_mwh": 7.644258263027275,
+        "cost_inr": 236736.25091811322,
+        "Q_DEL": 91.12956153846152,
+        "Q_MUM": 47.45939538461538,
+        "Q_BLR": 73.50513384615384,
+        "Q_HYD": 41.411043076923114,
+        "Q_CHE": 46.49486615384616
+      },
+      {
+        "month": "2025-10",
+        "moved_mwh": 11.193361268440526,
+        "cost_inr": 320898.667654008,
+        "Q_DEL": 93.58742858406123,
+        "Q_MUM": 49.94407407739457,
+        "Q_BLR": 79.75594937621547,
+        "Q_HYD": 38.41835423981939,
+        "Q_CHE": 38.29419372250936
+      },
+      {
+        "month": "2025-11",
+        "moved_mwh": 0.6487421851695245,
+        "cost_inr": 31139.62488813718,
+        "Q_DEL": 94.23617076923075,
+        "Q_MUM": 49.94407407739457,
+        "Q_BLR": 79.75594937621547,
+        "Q_HYD": 37.76961205464986,
+        "Q_CHE": 38.29419372250936
+      },
+      {
+        "month": "2025-12",
+        "moved_mwh": 0.8620079855959588,
+        "cost_inr": 50733.0200382718,
+        "Q_DEL": 95.0981787548267,
+        "Q_MUM": 49.94407407739457,
+        "Q_BLR": 79.75594937621547,
+        "Q_HYD": 37.68732379652605,
+        "Q_CHE": 37.514473995037214
+      },
+      {
+        "month": "2026-01",
+        "moved_mwh": 1.0907895037220783,
+        "cost_inr": 65447.370223324695,
+        "Q_DEL": 96.18896825854878,
+        "Q_MUM": 49.94407407739457,
+        "Q_BLR": 79.75594937621547,
+        "Q_HYD": 37.68732379652605,
+        "Q_CHE": 36.423684491315136
+      },
+      {
+        "month": "2026-02",
+        "moved_mwh": 0.0,
+        "cost_inr": 0.0,
+        "Q_DEL": 96.18896825854878,
+        "Q_MUM": 49.94407407739457,
+        "Q_BLR": 79.75594937621547,
+        "Q_HYD": 37.68732379652605,
+        "Q_CHE": 36.423684491315136
+      },
+      {
+        "month": "2026-03",
+        "moved_mwh": 0.0,
+        "cost_inr": 0.0,
+        "Q_DEL": 96.18896825854878,
+        "Q_MUM": 49.94407407739457,
+        "Q_BLR": 79.75594937621547,
+        "Q_HYD": 37.68732379652605,
+        "Q_CHE": 36.423684491315136
+      }
+    ]
+  }
+}

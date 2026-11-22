@@ -62,8 +62,13 @@ class ClusterSim:
         self.pack_q0 = float(caps["pack_mwh"])
         self.grid_mw = float(caps["grid_mw"]) * (sc.get("grid_mult", {}).get(cl, 1.0) if isinstance(sc.get("grid_mult"), dict) else 1.0)
         self.grid_derate = sc.get("grid_derate", {})
+        if sc.get("grid_derate_cluster") == cl:
+            self.grid_mw *= 1 - sc.get("grid_derate_frac", 0.2)
+        self.pack_q0 *= sc.get("pack_mult", 1.0)
         self.total_mw = float(caps["total_mw"])
-        self.solar_mw, self.wind_mw = float(re_mw["solar_mw"]), float(re_mw["wind_mw"])
+        rm = sc.get("re_mult", 1.0)
+        rm = rm.get(cl, 1.0) if isinstance(rm, dict) else rm
+        self.solar_mw, self.wind_mw = float(re_mw["solar_mw"]) * rm, float(re_mw["wind_mw"]) * rm
         h = hourly[hourly["cluster"] == cl].sort_values("time").reset_index(drop=True)
         f = fc[fc["cluster"] == cl].sort_values("time").reset_index(drop=True)
         h = h[h["time"] >= f["time"].min()].reset_index(drop=True)
@@ -182,6 +187,7 @@ class ClusterSim:
         Pb = self.bess_mwh * st["bess_c_rate"]
         soc_lo = (st["bess_soc_min"] + res) * self.bess_mwh
         soc_hi = st["bess_soc_max"] * self.bess_mwh
+        soc_lo_d = soc_lo * 1.003 + 1e-6  # dispatch floor incl. self-discharge buffer (reserve never breached passively)
         soc = 0.5 * self.bess_mwh
         sd_h = st["bess_self_discharge_day"] / 24
         acc = {s: (cu["steering_ai"][s] if policy.steering else cu["steering_baseline"]) for s in SEGS + ["swap"]}
@@ -228,7 +234,7 @@ class ClusterSim:
                 elif not policy.redeploy and Q != self.pack_q0:
                     Q, kpack = self.pack_q0, self.kpack0.copy()
             Qh = Q * kpack
-            rack_h = np.minimum(st["pack_max_c"] * Qh, self.swap_mw * kpack)
+            rack_h = np.minimum(st["pack_max_c"] * Qh, self.swap_mw * self.kpack0)  # racks are fixed; only packs move
             sl = slice(idx0, min(idx0 + oc["horizon_h"], len(self.times)))
             hrs = self.times[sl].hour.values
             Th = len(hrs)
@@ -330,7 +336,8 @@ class ClusterSim:
                                        scar, green, dict(band=cu["price_band"], beta=oc["pricing_beta"],
                                                          scarcity=oc["scarcity_markup"], green=oc["green_discount"]))
                 prices = segment_prices(m_raw, {s: p_ref[s] for s in SEGS}, {s: p_list[s] for s in SEGS}, cu)
-                m_sw = np.clip(oc["scarcity_markup"] * scar - 0.5 * oc["green_discount"] * green, -0.2, 0.2)
+                m_sw = oc["scarcity_markup"] * scar - 0.5 * oc["green_discount"] * green
+                m_sw = np.clip(m_sw - m_sw.mean(), -0.2, 0.2)  # revenue-neutral shape (no level ratchet)
                 prices["swap"] = segment_prices(m_sw, {"swap": p_ref["swap"]}, {"swap": 1.0}, cu, fleet_segments=())["swap"]
             else:
                 bt = cu["baseline_tod"]
@@ -438,12 +445,16 @@ class ClusterSim:
                         if delta > 0.02 * self.bess_mwh:
                             bch = min(delta / eta_b_c, Pb, (soc_hi - soc) / eta_b_c)
                         elif delta < -0.02 * self.bess_mwh:
-                            bdis = min(-delta, Pb, max(soc * (1 - sd_h) - soc_lo, 0))
+                            bdis = min(-delta, Pb, max(soc * (1 - sd_h) - soc_lo_d, 0))
                     elif not policy.storage_opt:
                         if hr < 6:
                             bch = max(min(Pb, (soc_hi - soc) / eta_b_c), 0)
                         elif 18 <= hr < 22:
-                            bdis = max(min(Pb, soc * (1 - sd_h) - soc_lo), 0)
+                            bdis = max(min(Pb, soc * (1 - sd_h) - soc_lo_d), 0)
+                    # BMS floor maintenance: trickle-charge so passive self-discharge never breaches the reserve
+                    floor_gap = soc_lo_d - (soc * (1 - sd_h) - bdis)
+                    if floor_gap > 0:
+                        bch = max(bch, floor_gap / eta_b_c)
                 # --- supply/demand balance on the AC bus ---
                 re_t = self.solar_mw * a["solar_cf"][i] + self.wind_mw * a["wind_cf"][i]
                 q_dam = float(dam_q[t])
@@ -462,11 +473,11 @@ class ClusterSim:
                 if net > 0:
                     if net > head:  # grid limit binds: cancel charging, use BESS, curtail packs then DC
                         short = net - head
-                        cut = min(bch, short)
+                        cut = min(max(bch - max(soc_lo_d - soc * (1 - sd_h), 0) / eta_b_c, 0.0), short)
                         bch -= cut
                         short -= cut
                         if short > 0 and (policy.storage_opt or 18 <= hr < 22):
-                            extra = min(short / eta_b_d, Pb - bdis, max(soc * (1 - sd_h) - soc_lo - bdis, 0))
+                            extra = min(short / eta_b_d, Pb - bdis, max(soc * (1 - sd_h) - soc_lo_d - bdis, 0))
                             bdis += extra
                             short -= extra * eta_b_d
                         if short > 0:
@@ -495,11 +506,11 @@ class ClusterSim:
                         load += tr_ll
                         net = load + bch - eta_b_d * bdis - re_t - q_dam
                     imp = min(max(net, 0.0), head)
-                    if policy.storage_opt and imp > 0 and soc * (1 - sd_h) - soc_lo - bdis > 0:
+                    if policy.storage_opt and imp > 0 and soc * (1 - sd_h) - soc_lo_d - bdis > 0:
                         rtm_land = a["rtm_price"][i] + landed_add
                         cost_now = min(rtm_land, tod_px[t])
                         if cost_now > 1.25 * params["terminal_value"] / max(oc["terminal_value_frac"], 1e-9) and bdis < Pb:
-                            extra = min(imp / eta_b_d, Pb - bdis, max(soc * (1 - sd_h) - soc_lo - bdis, 0)) * 0.5
+                            extra = min(imp / eta_b_d, Pb - bdis, max(soc * (1 - sd_h) - soc_lo_d - bdis, 0)) * 0.5
                             bdis += extra
                             imp -= extra * eta_b_d
                     if policy.ml_forecast or policy.stochastic_bid or policy.storage_opt:
