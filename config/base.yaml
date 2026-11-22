@@ -26,6 +26,7 @@ network:
   hub_archetypes: {CBD: 3, RES: 4, ITP: 3, HWY: 2}   # hubs | assumption (CBD, residential, IT-park, highway/logistics)
   hub_capacity_dirichlet_alpha: 4.0         # - | assumption: misalignment of capacity vs demand shares
   hub_demand_dirichlet_alpha: 2.5           # - | assumption
+  hub_misalloc_gamma: 1.0                   # - | CALIBRATED: exponent concentrating hub capacity/pack shares (1 = as drawn)
   charger_availability_mean: 0.97           # - | assumption (OCPP uptime ~97%)
   sanctioned_ratio: {DEL: 0.40, MUM: 0.36, BLR: 0.42, HYD: 0.50, CHE: 0.50}  # - | assumption within 0.25-0.6 of nameplate
   sanctioned_scale: 1.0                     # - | CALIBRATED multiplier
@@ -52,7 +53,7 @@ storage:
   pack_self_discharge_month: 0.025          # 1/month | 2-3%/month (LFP incl. BMS)
   pack_bms_standby_w: 1.0                   # W/pack | assumption
   pack_cooling_kw_per_mwh_degc: 0.6         # kW per MWh charged per degC above 25C | assumption (cabinet cooling)
-  van_rebalance_frac_h: 0.04                # 1/h of cluster inventory | AI intra-city van capacity (assumption)
+  van_rebalance_frac_h: 0.015               # 1/h of cluster inventory | AI intra-city van capacity (~6 vans x 100 packs/h per cluster; assumption)
 
 reserve:
   frac: 0.05                                # - | case study: 5% of capacity & charged inventory uncommitted

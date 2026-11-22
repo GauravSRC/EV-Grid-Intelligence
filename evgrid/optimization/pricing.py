@@ -21,7 +21,8 @@ def compose_markup(defer: np.ndarray, recov: np.ndarray, flex: np.ndarray, backl
     m_cost = pc["beta"] * np.clip((px_fc - px_fc.mean()) / max(px_fc.mean(), 1e-6), -0.4, 0.4)
     m_scar = pc["scarcity"] * scarcity.astype(float)
     m_green = pc["green"] * green.astype(float)
-    return m_shift + m_cost + m_scar - m_green
+    m = m_shift + m_cost + m_scar - m_green
+    return m - m.mean()  # revenue-neutral shape: pricing shifts load, it does not raise the tariff level
 
 
 def apply_guardrails(m_raw: np.ndarray, p_ref: float, p_list: float, band: float, guard: float) -> np.ndarray:
