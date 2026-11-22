@@ -1,0 +1,69 @@
+{
+  "dam_mean_by_fy": {
+    "FY22": 4.483,
+    "FY23": 5.992,
+    "FY24": 5.331,
+    "FY25": 4.557,
+    "FY26": 4.738
+  },
+  "fy26_dam_cap_hours_share": 0.018812785388127855,
+  "fy26_solar_cuf": {
+    "BLR": 0.202,
+    "CHE": 0.204,
+    "DEL": 0.199,
+    "HYD": 0.199,
+    "MUM": 0.199
+  },
+  "fy26_wind_cuf": {
+    "BLR": 0.304,
+    "CHE": 0.325,
+    "DEL": 0.303,
+    "HYD": 0.3,
+    "MUM": 0.32
+  },
+  "fy26_reference_demand_twh": {
+    "dc": 1.103,
+    "swap": 0.2695
+  },
+  "fy26_swaps_million": 124.63,
+  "max_temp_by_cluster": {
+    "BLR": 39.4,
+    "CHE": 41.4,
+    "DEL": 42.0,
+    "HYD": 46.8,
+    "MUM": 38.2
+  },
+  "solar_hour_dam_mean_surplus_months": 2.2457246963431614,
+  "re_contracts": {
+    "DEL": {
+      "solar_mw": 26.89,
+      "wind_mw": 14.42,
+      "re_mwh_yr": 85066.5,
+      "ref_mwh": 351348.16
+    },
+    "MUM": {
+      "solar_mw": 31.41,
+      "wind_mw": 16.01,
+      "re_mwh_yr": 99623.85,
+      "ref_mwh": 382083.01
+    },
+    "BLR": {
+      "solar_mw": 30.2,
+      "wind_mw": 16.4,
+      "re_mwh_yr": 96996.73,
+      "ref_mwh": 260405.13
+    },
+    "HYD": {
+      "solar_mw": 22.6,
+      "wind_mw": 12.27,
+      "re_mwh_yr": 71621.76,
+      "ref_mwh": 113106.75
+    },
+    "CHE": {
+      "solar_mw": 22.65,
+      "wind_mw": 11.65,
+      "re_mwh_yr": 73685.77,
+      "ref_mwh": 113041.53
+    }
+  }
+}

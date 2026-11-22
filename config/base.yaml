@@ -1,0 +1,164 @@
+# =============================================================================
+# EV Grid Intelligence - base configuration
+# Every parameter carries "unit | source" in its trailing comment.
+# "assumption" = engineering assumption documented in docs/assumptions.md.
+# Values tagged CALIBRATED are overwritten by config/calibrated.yaml (frozen
+# after baseline calibration, see evgrid/simulation/calibrate.py).
+# =============================================================================
+meta:
+  seed: 42                                  # - | reproducibility
+  start: "2021-04-01 00:00"                 # IST | FY22 start
+  end: "2026-03-31 23:00"                   # IST | FY26 end
+  sim_start: "2025-04-01"                   # IST | simulated fiscal year (FY26 = test year 5)
+  sim_end: "2026-03-31"                     # IST
+  train_end: "2025-03-31 23:00"             # IST | forecasting train years 1-4
+
+clusters: [DEL, MUM, BLR, HYD, CHE]         # - | case study: 5 metro clusters
+cluster_names: {DEL: "Delhi NCR", MUM: "Mumbai MMR", BLR: "Bengaluru", HYD: "Hyderabad", CHE: "Chennai"}
+price_region: {DEL: N, MUM: W, BLR: S, HYD: S, CHE: S}   # - | IEX bid areas (simplified to regions)
+
+network:
+  total_capacity_mw: 1200                   # MW | case study
+  dc_share_overall: 0.60                    # - | case study (60% DC / 40% swap)
+  capacity_share: {DEL: 0.26, MUM: 0.24, BLR: 0.20, HYD: 0.15, CHE: 0.15}   # - | assumption
+  swap_share: {DEL: 0.46, MUM: 0.30, BLR: 0.48, HYD: 0.38, CHE: 0.38}       # - | assumption (DEL/BLR swap-heavy, MUM DC-heavy; overall 40%)
+  hubs_per_cluster: 12                      # - | assumption
+  hub_archetypes: {CBD: 3, RES: 4, ITP: 3, HWY: 2}   # hubs | assumption (CBD, residential, IT-park, highway/logistics)
+  hub_capacity_dirichlet_alpha: 4.0         # - | assumption: misalignment of capacity vs demand shares
+  hub_demand_dirichlet_alpha: 2.5           # - | assumption
+  charger_availability_mean: 0.97           # - | assumption (OCPP uptime ~97%)
+  sanctioned_ratio: {DEL: 0.40, MUM: 0.36, BLR: 0.42, HYD: 0.50, CHE: 0.50}  # - | assumption within 0.25-0.6 of nameplate
+  sanctioned_scale: 1.0                     # - | CALIBRATED multiplier
+
+storage:
+  bess_mwh_total: 300                       # MWh | case study 600 MWh split (assumption 50/50)
+  bess_c_rate: 0.5                          # 1/h | assumption (2-h LFP)
+  bess_share: {DEL: 0.26, MUM: 0.24, BLR: 0.20, HYD: 0.15, CHE: 0.15}      # - | pro-rata capacity
+  bess_eta_ch: 0.95                         # - | at low C-rate; AC-AC RTE 85-88% (SECI/NTPC BESS tenders: >=85%)
+  bess_eta_dis: 0.95                        # -
+  bess_eta_c_slope: 0.03                    # -/C | efficiency drop per C (assumption)
+  bess_aux_frac_day: 0.005                  # 1/day of capacity at 30C | 0.3-0.8%/day assumption
+  bess_aux_temp_slope: 0.0002               # 1/day/degC | assumption
+  bess_self_discharge_day: 0.001            # 1/day | LFP datasheets
+  bess_soc_min: 0.10                        # - | SoC lower bound
+  bess_soc_max: 0.95                        # -
+  pack_mwh_total: 300                       # MWh | case study (swap-pack inventory at stations)
+  pack_share: {DEL: 0.24, MUM: 0.14, BLR: 0.18, HYD: 0.22, CHE: 0.22}      # - | assumption: excess packs in HYD/CHE
+  pack_avg_kwh: 2.5                         # kWh/pack | 2W ~2 kWh, 3W ~4.5 kWh (Battery Smart / Sun Mobility)
+  pack_max_c: 1.5                           # 1/h | racks 480 MW ~ 1.5C
+  pack_ai_c: 0.5                            # 1/h | AI just-in-time C-rate
+  pack_eta_low_c: 0.93                      # - | at 0.5C (assumption)
+  pack_eta_high_c: 0.90                     # - | at 1.5C (assumption)
+  pack_self_discharge_month: 0.025          # 1/month | 2-3%/month (LFP incl. BMS)
+  pack_bms_standby_w: 1.0                   # W/pack | assumption
+  pack_cooling_kw_per_mwh_degc: 0.6         # kW per MWh charged per degC above 25C | assumption (cabinet cooling)
+  van_rebalance_frac_h: 0.04                # 1/h of cluster inventory | AI intra-city van capacity (assumption)
+
+reserve:
+  frac: 0.05                                # - | case study: 5% of capacity & charged inventory uncommitted
+  priority_demand_frac: 0.02                # - | priority fleets/emergency ~2% (assumption)
+
+grid:
+  dam_fee: 0.02                             # INR/kWh | IEX transaction fee
+  oa_charges: 1.40                          # INR/kWh | assumption within 1.0-1.8 (CSS, wheeling, losses)
+  iex_cap: 10.0                             # INR/kWh | CERC/IEX DAM price cap
+  discom_energy: {DEL: 4.5, MUM: 8.5, BLR: 5.5, HYD: 6.0, CHE: 7.0}         # INR/kWh | DERC/MERC/TGERC/TNERC EV tariffs; BLR assumption
+  tod_mult: {solar: 0.8, normal: 1.0, peak: 1.2}   # - | base case (09-16 / other / 18-23); MoP 0.7/1.3 as scenario
+  bank_charge: 0.08                         # - | in-kind banking charge (Green Energy OA Rules 2022)
+  bank_value_frac_of_discount_discom: 1.0   # - | banked kWh offsets off-peak DISCOM energy (assumption)
+  gdam_fee: 0.04                            # INR/kWh | fees on G-DAM sales (assumption)
+  rtm_premium_ai_exec: 0.0                  # INR/kWh | no extra slippage
+  transformer_noload_frac: 0.0025           # - of rating | IEC 60076 typical
+  transformer_load_loss_frac: 0.010         # - at rated load | typical
+  transformer_rating_frac: 0.60             # - of nameplate (diversity) | assumption
+
+re:
+  share_target: 0.35                        # - | case study: ~35% of energy from solar+wind OA
+  cluster_mult: {DEL: 0.65, MUM: 0.70, BLR: 1.00, HYD: 1.70, CHE: 1.75}     # - | assumption: HYD/CHE over-contracted
+  solar_frac: 0.55                          # - | of RE energy from solar (rest wind)
+  landed_cost: 4.75                         # INR/kWh | 4.5-5.0 incl. OA (assumption, CERC/SECI tariffs + OA)
+  solar_cuf: 0.20                           # - | 19-21% (MNRE)
+  wind_cuf: 0.31                            # - | 28-35% (NIWE)
+
+prices:
+  fy_dam_mean: {FY22: 4.40, FY23: 5.90, FY24: 5.24, FY25: 4.47, FY26: 4.65}   # INR/kWh | IEX AR FY24-25; FY22/23 IEX; FY26 assumption
+  region_offset: {N: -0.02, W: 0.0, S: 0.04}                                  # - | relative regional spread (assumption)
+  gdam_ratio_mean: 0.82                     # - | G-DAM vs DAM (Apr-25: 4.07 vs 5.20)
+  rtm_evening_spread_max: 3.4               # INR/kWh | EAL Power Chronicle
+
+customers:
+  dc_price: {retail: 20.0, ride: 17.5, logi: 16.5}          # INR/kWh ex-GST | public DC Rs15-25/kWh
+  dc_segment_mix: {retail: 0.35, ride: 0.40, logi: 0.25}    # - | assumption
+  swap_price: {s2w: 70.0, s3w: 150.0}                       # INR/swap ex-GST | assumption (BaaS Rs33-40/kWh)
+  swap_kwh: {s2w: 1.7, s3w: 3.8}                            # kWh/swap delivered | assumption
+  swap_count_mix: {s2w: 0.78, s3w: 0.22}                    # - | assumption
+  elasticity: {retail: -0.3, ride: -0.5, logi: -0.6, swap: -0.2}       # - | assumption
+  shift_share: {retail: 0.05, ride: 0.25, logi: 0.40, swap: 0.10}      # - | assumption
+  shift_window_h: {retail: 2, ride: 3, logi: 6, swap: 1}               # h | assumption
+  steering_ai: {retail: 0.20, ride: 0.50, logi: 0.70, swap: 0.40}      # - | app/fleet-API acceptance (assumption)
+  steering_baseline: 0.05                   # - | assumption
+  steering_leak: 0.10                       # - | share of steered demand lost en route (assumption)
+  dc_wait_frac: 0.30                        # - | unserved DC demand that waits 1 h
+  response_noise_sd: 0.25                   # - | multiplicative noise on price response
+  price_band: 0.20                          # - | case study: +-20% of previous-day average tariff
+  daily_guardrail: 0.05                     # - | assumption: daily-average change <= 5%
+  fleet_band: 0.10                          # - | fleet contracts +-10%
+  baseline_tod: {solar: -0.05, normal: 0.0, peak: 0.05}               # - | static ToD tariff of status quo
+
+demand:
+  # FY26 reference DC demand as fraction of DC nameplate (cluster-level average utilisation of demand)
+  dc_ref_util: {DEL: 0.205, MUM: 0.215, BLR: 0.200, HYD: 0.095, CHE: 0.095}  # - | assumption (fleet-anchored network)
+  swap_ref_turns: {DEL: 3.3, MUM: 2.9, BLR: 3.6, HYD: 1.35, CHE: 1.35}       # turns/day of station packs | assumption
+  demand_scale: 1.0                         # - | CALIBRATED multiplier on reference demand
+  growth_yoy: 0.20                          # 1/yr | case study context (~20%/yr)
+  temp_threshold_c: 32.0                    # degC | assumption
+  temp_slope: 0.015                         # 1/degC | +1.5%/degC above 32C
+  noise_sd: 0.08                            # - | AR(1) log-noise
+  noise_phi: 0.6                            # -
+
+losses:
+  charger_p0_frac: 0.006                    # - of module rating per energised module | CALIBRATED (0.5-1%)
+  charger_k1: 0.040                         # - proportional loss | INL/ORNL: ~95% peak
+  charger_k2: 0.020                         # - quadratic loss at rated
+  charger_module_kw: 30                     # kW | module size (assumption)
+  ai_module_margin: 1.25                    # - | AI keeps forecast need x margin modules energised
+  ai_min_on_frac: 0.15                      # - | AI minimum energised share (warm standby)
+  distribution_extra_frac: 0.0              # - | other distribution losses
+
+degradation:
+  pack_efc_life: 4500                       # cycles to 80% | 4000-6000 LFP
+  bess_efc_life: 6000                       # cycles to 80%
+  pack_replacement_inr_kwh: 9000            # INR/kWh | BNEF 2025 + integration
+  bess_replacement_inr_kwh: 7000            # INR/kWh
+  residual_frac: 0.25                       # -
+  calendar_fade_yr: 0.02                    # 1/yr at 25C & 50% SoC
+  calendar_temp_doubling_c: 10.0            # degC
+  calendar_high_soc_mult: 1.5               # - near 100% SoC
+
+opex:
+  payments_frac: 0.025                      # - of revenue | payment gateway/platform
+  site_host_frac: 0.09                      # - of revenue | 8-10% site-host share
+  swap_partner_inr: 10.0                    # INR/swap | assumption
+  pack_logistics_inr_per_pack_day: 0.0      # INR | included in fixed
+  fixed_opex_cr: 1000.0                     # INR crore/yr company | CALIBRATED -> baseline EBITDA ~12.5%
+  fixed_alloc_capacity_weight: 1.0          # - | allocation by installed capacity
+
+optimization:
+  horizon_h: 36                             # h | 24 h + 12 h look-ahead
+  voll: 35.0                                # INR/kWh | value of lost load (swept for Pareto)
+  terminal_value_frac: 0.85                 # - of mean landed price for stored energy
+  shift_incentive: 0.3                      # INR/kWh | cost of shifting (discount given)
+  price_scenarios: [0.1, 0.3, 0.5, 0.7, 0.9]   # quantiles for stochastic bid curves
+  pricing_beta: 0.4                         # - | wholesale pass-through
+  scarcity_markup: 0.10                     # - | when P90 load > 95% deliverable
+  green_discount: 0.06                      # - | in RE-surplus / solar hours
+  pack_safety: 0.25                         # - | JIT pack target safety on top of forecast
+  pack_lookahead_h: 4                       # h
+
+economics:
+  ai_build_cr: 30.0                         # INR crore | case brief
+  ai_run_cr_yr: 18.0                        # INR crore/yr | case brief
+  wacc: 0.12                                # - | case brief
+  years: 5                                  # yr
+  bess_capex_inr_kwh: 16000                 # INR/kWh installed | BNEF stationary $70/kWh pack + BoS (assumption)
+  bess_auction_lakh_mw_month: [1.5, 3.6]    # INR lakh/MW/month | 2025-26 Indian standalone BESS auctions
