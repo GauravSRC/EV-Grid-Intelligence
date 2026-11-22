@@ -29,10 +29,11 @@ def apply_guardrails(m_raw: np.ndarray, p_ref: float, p_list: float, band: float
     """Clip to the band, anchor towards list price, enforce the daily-average guardrail. Returns prices."""
     anchor = float(np.clip(-(p_ref / p_list - 1.0), -guard, guard))
     m = np.clip(m_raw + anchor, -band, band)
-    mean_m = m.mean()
-    if abs(mean_m) > guard:  # daily-average change limit
-        m = m - (mean_m - np.sign(mean_m) * guard)
-        m = np.clip(m, -band, band)
+    for _ in range(50):  # daily-average change limit (shift + re-clip until both hold; feasible since band > guard)
+        mean_m = m.mean()
+        if abs(mean_m) <= guard + 1e-12:
+            break
+        m = np.clip(m - (mean_m - np.sign(mean_m) * guard), -band, band)
     return p_ref * (1.0 + m)
 
 
