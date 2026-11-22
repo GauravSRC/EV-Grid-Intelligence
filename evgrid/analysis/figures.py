@@ -136,7 +136,8 @@ def waterfalls() -> str:
         ax[1].text(i, v + 0.15, f"{v:.2f}%", ha="center", fontsize=8)
     ax[1].set_xticks([0, 1], ["Baseline", "AI"])
     ax[1].set(title="Losses by component (% of meter input)", ylabel="%")
-    ax[1].legend(fontsize=7, loc="upper right")
+    ax[1].legend(fontsize=7, loc="upper left", bbox_to_anchor=(1.0, 1.0))
+    ax[1].set_xlim(-0.6, 1.6)
     # (c) EBITDA bridge
     b, a = m["Baseline"]["overall"], m["AI"]["overall"]
     steps = [("Revenue", a["revenue_cr"] - b["revenue_cr"]), ("Energy cost", -(a["energy_cost_cr"] - b["energy_cost_cr"])),

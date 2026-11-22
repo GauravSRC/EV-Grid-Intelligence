@@ -1,0 +1,21 @@
+{
+  "delta_ebitda_cr_yr": 255.46476553117986,
+  "npv_5yr_cr": 890.8933073244435,
+  "npv_5yr_with_20pct_growth_cr": 1285.45064621973,
+  "payback_months": 1.4091962907349016,
+  "ai_build_cr": 30.0,
+  "ai_run_cr_yr": 18.0,
+  "wacc": 0.12,
+  "delta_ebitda_demand_growth_cr_yr": 334.63169804861013,
+  "delta_ebitda_2x_network_cr_yr": 510.92953106235973,
+  "bess_100mwh": {
+    "delta_ebitda_cr_yr": 7.268026866172704,
+    "delta_R_pp": -0.008209185461516277,
+    "capex_cr": 160.0,
+    "annualised_capex_cr_10yr": 28.317466265575042,
+    "auction_benchmark_cr_yr": [
+      9.0,
+      21.6
+    ]
+  }
+}
