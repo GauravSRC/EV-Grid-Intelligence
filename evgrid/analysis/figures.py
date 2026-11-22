@@ -41,7 +41,7 @@ def architecture() -> str:
     box(5.1, 0.55, 2.5, 1.75, "3c. Operational (hourly)", "RT dispatcher, RTM nowcast\nBESS tracking, JIT packs\nhub steering, module staging", PALETTE[2])
     box(8.0, 3.3, 1.8, 2.5, "4. Pricing", "p = p_ref(1+m)\n|m|<=20%, fleets 10%\ndaily avg <=5%\nshift + cost +\nscarcity - green", PALETTE[3])
     box(10.1, 3.3, 1.8, 2.5, "5. Execution", "IEX bids (trader\napproval)\nOCPP 2.0.1 chargers\nBMS / racks\nfleet API & app", PALETTE[4])
-    box(8.0, 0.55, 3.9, 2.2, "6. Monitoring & MLOps", "KPI + constraint monitors (band, reserve, grid limit)\ndrift detection -> weekly retrain, champion/challenger\nhuman-in-the-loop trader approval\nrule-based fail-safe (baseline policy) on any LP/forecast fault", PALETTE[6])
+    box(8.0, 0.55, 3.9, 2.2, "6. Monitoring & MLOps", "KPI + constraint monitors (band, reserve, grid limit)\ndrift detection -> weekly retrain, champion/challenger\nhuman-in-the-loop trader approval\nrule-based fail-safe on LP or forecast faults", PALETTE[6])
     arrow(2.2, 4.55, 2.6, 4.55)
     arrow(4.7, 4.9, 5.1, 5.0)
     arrow(4.7, 4.2, 5.1, 3.3)

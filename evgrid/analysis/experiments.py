@@ -138,6 +138,9 @@ class Experiments:
         out["re_reallocation"] = _summ(self.run(AI, scenario={"re_mult": {"HYD": 0.6, "CHE": 0.6, "DEL": 1.45, "MUM": 1.4}}))
         out["fleet_contract_share"] = _summ(self.run(AI, cfg=deep_merge(self.cfg, {"customers": {
             "shift_share": {"retail": 0.10, "ride": 0.35, "logi": 0.55, "swap": 0.15}}})))
+        # structural: re-site 3 pp of installed capacity each from HYD/CHE to MUM/DEL (assets + their fixed cost move)
+        out["asset_resiting"] = _summ(self.run(AI, cfg=deep_merge(self.cfg, {"network": {"capacity_share": {
+            "DEL": 0.29, "MUM": 0.27, "BLR": 0.20, "HYD": 0.12, "CHE": 0.12}}})))
         return out
 
 
